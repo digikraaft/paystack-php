@@ -2,6 +2,7 @@
 
 ![run-tests](https://github.com/digikraaft/paystack-php/workflows/run-tests/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Github All Releases](https://img.shields.io/github/downloads/digikraaft/paystack-php/total.svg)]()
 
 
 This package provides an expressive and convenient way to interact with the [Paystack API](https://developers.paystack.co/reference).
