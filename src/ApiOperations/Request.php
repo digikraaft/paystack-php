@@ -3,10 +3,10 @@
 
 namespace Digikraaft\Paystack\ApiOperations;
 
+use \GuzzleHttp\Client;
 use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
 use Digikraaft\Paystack\Exceptions\IsNullException;
 use Digikraaft\Paystack\Paystack;
-use \GuzzleHttp\Client;
 
 /**
  * Trait for resources that need to make API requests.
