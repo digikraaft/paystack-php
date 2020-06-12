@@ -36,6 +36,6 @@ class PaymentPage extends ApiResource
         self::validateParams($params, true);
         $url = static::resourceUrl($page_id).'/product';
 
-        return static::staticRequest('GET', $url);
+        return static::staticRequest('POST', $url);
     }
 }
