@@ -22,7 +22,6 @@ class Bank extends ApiResource
     }
 
     /**
-     * @param string $bvn
      * @param array $params
      * @link https://developers.paystack.co/reference#match-bvn
      *
