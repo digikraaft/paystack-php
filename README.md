@@ -112,9 +112,11 @@ if ($customer->status && $customer->status == true) {
 ```
 Future updates will see to improving on how the response object is handled.
 
+## Documentation
+For detailed documentation, check the wik page [here](../../wiki)
+
 ## Todo
 * Comprehensive tests
-* Comprehensive documentation
 * Better API response handling
 
 ## Testing
