@@ -8,9 +8,7 @@ class Transaction extends ApiResource
     const OBJECT_NAME = 'transaction';
 
     use ApiOperations\All;
-    use ApiOperations\Create;
     use ApiOperations\Fetch;
-    use ApiOperations\Update;
 
     /**
      * @param array $params details at
