@@ -113,7 +113,7 @@ if ($customer->status && $customer->status == true) {
 Future updates will see to improving on how the response object is handled.
 
 ## Documentation
-For detailed documentation, check the wik page [here](../../wiki)
+For detailed documentation, check the wiki page [here](../../wiki)
 
 ## Todo
 * Comprehensive tests
