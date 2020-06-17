@@ -31,7 +31,8 @@ class Transaction extends ApiResource
      */
     public static function verify($reference)
     {
-        $url = static::resourceUrl($reference);
+        $url = "verify/{$reference}";
+        $url = static::endPointUrl($url);
 
         return static::staticRequest('GET', $url);
     }
