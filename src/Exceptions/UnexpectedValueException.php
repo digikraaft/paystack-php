@@ -1,6 +1,6 @@
 <?php
 
-namespace Digikraaft\Paystack\Exception;
+namespace Digikraaft\Paystack\Exceptions;
 
 class UnexpectedValueException extends \UnexpectedValueException
 {
