@@ -1,6 +1,6 @@
 # Introduction
 
-![run-tests](https://github.com/digikraaft/paystack-php/workflows/run-tests/badge.svg)
+![tests](https://github.com/digikraaft/paystack-php/workflows/run-tests/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
