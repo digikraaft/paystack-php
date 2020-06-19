@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class Bank extends ApiResource
@@ -9,9 +8,10 @@ class Bank extends ApiResource
 
     /**
      * @param string $bvn
+     *
      * @link https://developers.paystack.co/reference#resolve-bvn
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function resolveBvn(string $bvn)
     {
@@ -23,9 +23,10 @@ class Bank extends ApiResource
 
     /**
      * @param array $params
+     *
      * @link https://developers.paystack.co/reference#match-bvn
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function bvnMatch($params)
     {
@@ -37,9 +38,10 @@ class Bank extends ApiResource
 
     /**
      * @param array $params
+     *
      * @link https://developers.paystack.co/reference#resolve-account-number
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function resolveAccountNumber($params)
     {
@@ -51,9 +53,10 @@ class Bank extends ApiResource
 
     /**
      * @param string $bin
+     *
      * @link https://developers.paystack.co/reference#resolve-card-bin
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function resolveCardBin(string $bin)
     {

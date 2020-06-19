@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class Balance extends ApiResource
@@ -9,11 +8,13 @@ class Balance extends ApiResource
 
     use ApiOperations\All;
 
-
     /**
      * @param array $params
-     * @return array|Object
+     *
      * @throws Exceptions\InvalidArgumentException|Exceptions\IsNullException
+     *
+     * @return array|object
+     *
      * @link https://developers.paystack.co/reference#fetch-balance-history
      *
      * @returns array|Object

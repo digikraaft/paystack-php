@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class Invoice extends ApiResource
@@ -14,9 +13,10 @@ class Invoice extends ApiResource
 
     /**
      * @param string $invoice_code details at
+     *
      * @link https://developers.paystack.co/reference#verify-invoice
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function verify(string $invoice_code)
     {
@@ -29,11 +29,13 @@ class Invoice extends ApiResource
     /**
      * @param string $invoice_id details at
      * @param $params
-     * @return array|Object
+     *
      * @throws Exceptions\InvalidArgumentException
      * @throws Exceptions\IsNullException
-     * @link https://developers.paystack.co/reference#send-notification
      *
+     * @return array|object
+     *
+     * @link https://developers.paystack.co/reference#send-notification
      */
     public static function notify(string $invoice_id, $params)
     {
@@ -44,12 +46,14 @@ class Invoice extends ApiResource
     }
 
     /**
-     * Get invoice totals for dashboard
+     * Get invoice totals for dashboard.
+     *
      * @link https://developers.paystack.co/reference#get-invoice-metrics-for-dashboard
      *
-     * @return array|Object
      * @throws Exceptions\InvalidArgumentException
      * @throws Exceptions\IsNullException
+     *
+     * @return array|object
      */
     public static function totals()
     {
@@ -60,13 +64,14 @@ class Invoice extends ApiResource
 
     /**
      * @param string $invoice_id
-     * @param array $params
+     * @param array  $params
      *
-     * @return array|Object
      * @throws Exceptions\InvalidArgumentException
      * @throws Exceptions\IsNullException
-     * @link https://developers.paystack.co/reference#finalize-a-draft-invoice
      *
+     * @return array|object
+     *
+     * @link https://developers.paystack.co/reference#finalize-a-draft-invoice
      */
     public static function finalize($invoice_id, $params = null)
     {
@@ -78,12 +83,14 @@ class Invoice extends ApiResource
     }
 
     /**
-     * @param string $invoice_id
+     * @param string     $invoice_id
      * @param null|array $params
      *
-     * @return array|Object
      * @throws Exceptions\InvalidArgumentException
      * @throws Exceptions\IsNullException
+     *
+     * @return array|object
+     *
      * @link https://developers.paystack.co/reference#archive-invoice
      */
     public static function archive($invoice_id, $params)
@@ -98,13 +105,14 @@ class Invoice extends ApiResource
 
     /**
      * @param string $invoice_id
-     * @param array $params
+     * @param array  $params
      *
-     * @return array|Object
      * @throws Exceptions\InvalidArgumentException
      * @throws Exceptions\IsNullException
-     * @link https://developers.paystack.co/reference#mark_as_paid
      *
+     * @return array|object
+     *
+     * @link https://developers.paystack.co/reference#mark_as_paid
      */
     public static function markAsPaid($invoice_id, $params)
     {

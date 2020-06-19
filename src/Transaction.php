@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class Transaction extends ApiResource
@@ -12,9 +11,10 @@ class Transaction extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#initialize-a-transaction
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function initialize($params)
     {
@@ -26,8 +26,10 @@ class Transaction extends ApiResource
 
     /**
      * @param string $reference details at
+     *
      * @link https://developers.paystack.co/reference#verify-transaction
-     * @return array|Object
+     *
+     * @return array|object
      */
     public static function verify($reference)
     {
@@ -39,8 +41,10 @@ class Transaction extends ApiResource
 
     /**
      * @param array $params details of parameter content at
+     *
      * @link https://developers.paystack.co/reference#charge-authorization
-     * @return array|Object
+     *
+     * @return array|object
      */
     public static function chargeAuthorization($params)
     {
@@ -52,8 +56,10 @@ class Transaction extends ApiResource
 
     /**
      * @param string $transaction_id details at
+     *
      * @link https://developers.paystack.co/reference#view-transaction-timeline
-     * @return array|Object
+     *
+     * @return array|object
      */
     public static function timeline($transaction_id)
     {
@@ -64,8 +70,10 @@ class Transaction extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#transaction-totals
-     * @return array|Object
+     *
+     * @return array|object
      */
     public static function totals($params)
     {
@@ -77,8 +85,10 @@ class Transaction extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#export-transactions
-     * @return array|Object
+     *
+     * @return array|object
      */
     public static function export($params)
     {
@@ -90,8 +100,10 @@ class Transaction extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#request-reauthorization
-     * @return array|Object
+     *
+     * @return array|object
      */
     public static function requestReauthorization($params)
     {
@@ -103,8 +115,10 @@ class Transaction extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#partial-debit
-     * @return array|Object
+     *
+     * @return array|object
      */
     public static function partialDebit($params)
     {

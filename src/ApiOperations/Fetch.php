@@ -7,7 +7,7 @@ trait Fetch
     /**
      * @param string $id Resource id
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function fetch(string $id)
     {

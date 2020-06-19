@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack\Tests;
 
 use Mockery as mk;
@@ -16,9 +15,10 @@ class CustomerTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
-    public function it_can_return_all() : void
+    public function it_can_return_all(): void
     {
         $mock = mk::mock('alias:Customer');
         $mock->allows('list');
@@ -29,9 +29,10 @@ class CustomerTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
-    public function it_can_create_customer() : void
+    public function it_can_create_customer(): void
     {
         $mock = mk::mock('alias:Customer');
         $mock->allows('create')
@@ -43,9 +44,10 @@ class CustomerTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
-    public function it_can_fetch_customer() : void
+    public function it_can_fetch_customer(): void
     {
         $mock = mk::mock('alias:Customer');
         $mock->allows('fetch')
@@ -57,9 +59,10 @@ class CustomerTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
-    public function it_can_update_customer() : void
+    public function it_can_update_customer(): void
     {
         $mock = mk::mock('alias:Customer');
         $mock->allows('update')
@@ -71,9 +74,10 @@ class CustomerTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
-    public function it_can_white_or_black_list_customer() : void
+    public function it_can_white_or_black_list_customer(): void
     {
         $mock = mk::mock('alias:Customer');
         $mock->allows('whiteOrBlackList')
@@ -85,9 +89,10 @@ class CustomerTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
-    public function it_can_deactivate_authorization() : void
+    public function it_can_deactivate_authorization(): void
     {
         $mock = mk::mock('alias:Customer');
         $mock->allows('deactivateAuthorization')

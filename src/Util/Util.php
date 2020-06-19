@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack\Util;
 
 use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
@@ -15,16 +14,16 @@ abstract class Util
      * @param mixed|string $value a string to UTF8-encode
      *
      * @return mixed|string the UTF8-encoded string, or the object passed in if
-     *    it wasn't a string
+     *                      it wasn't a string
      */
     public static function utf8($value)
     {
         if (null === self::$isMbstringAvailable) {
             self::$isMbstringAvailable = function_exists('mb_detect_encoding');
 
-            if (! self::$isMbstringAvailable) {
-                trigger_error('It looks like the mbstring extension is not enabled. ' .
-                    'UTF-8 strings will not properly be encoded. Ask your system ' .
+            if (!self::$isMbstringAvailable) {
+                trigger_error('It looks like the mbstring extension is not enabled. '.
+                    'UTF-8 strings will not properly be encoded. Ask your system '.
                     'administrator to enable the mbstring extension.', E_USER_WARNING);
             }
         }
@@ -41,11 +40,11 @@ abstract class Util
      *
      * @param array $resp the response from the Paystack API
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function convertArrayToObject($resp)
     {
-        if (! is_array($resp)) {
+        if (!is_array($resp)) {
             $message = 'The response passed must be an array';
 
             throw new InvalidArgumentException($message);

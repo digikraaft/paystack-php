@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack\Tests;
 
 use Digikraaft\Paystack\ApiResource;

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack\Tests;
 
 use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
@@ -19,7 +18,6 @@ class PaystackTest extends TestCase
         $this->paystack = mk::mock('Digikraaft\Paystack\Paystack');
         $this->mock = mk::mock('GuzzleHttp\Client');
     }
-
 
     /** @test */
     public function it_returns_instance_of_paystack()

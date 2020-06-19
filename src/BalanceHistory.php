@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class BalanceHistory extends ApiResource
@@ -9,15 +8,17 @@ class BalanceHistory extends ApiResource
 
     /**
      * @param array $params
-     * @return array|Object
-     * @throws Exceptions\InvalidArgumentException
-     * @link https://developers.paystack.co/reference#fetch-balance-history
      *
+     * @throws Exceptions\InvalidArgumentException
+     *
+     * @return array|object
+     *
+     * @link https://developers.paystack.co/reference#fetch-balance-history
      */
     public static function ledger($params)
     {
         self::validateParams($params, true);
-        $url = static::classUrl() . '/ledger';
+        $url = static::classUrl().'/ledger';
 
         return static::staticRequest('get', $url);
     }

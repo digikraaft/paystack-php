@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class Transfer extends ApiResource
@@ -12,9 +11,10 @@ class Transfer extends ApiResource
 
     /**
      * @param array $params
+     *
      * @link https://developers.paystack.co/reference#initiate-transfer
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function initiate($params)
     {
@@ -26,9 +26,10 @@ class Transfer extends ApiResource
 
     /**
      * @param string $reference Transfer reference. Details at
+     *
      * @link https://developers.paystack.co/reference#verify-transfer
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function verify($reference)
     {
@@ -40,9 +41,10 @@ class Transfer extends ApiResource
 
     /**
      * @param array $params
+     *
      * @link https://developers.paystack.co/reference#finalize-transfer
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function finalize($params)
     {
@@ -54,9 +56,10 @@ class Transfer extends ApiResource
 
     /**
      * @param array $params
+     *
      * @link https://developers.paystack.co/reference#initiate-bulk-transfer
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function initiateBulkTransfer($params)
     {
@@ -68,23 +71,25 @@ class Transfer extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#resend-otp-for-transfer
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function resendOtp($params)
     {
         self::validateParams($params, true);
-        $url = static::classUrl() . '/resend_otp';
+        $url = static::classUrl().'/resend_otp';
 
         return static::staticRequest('POST', $url, $params);
     }
 
     /**
      * @param null|array $params details at
+     *
      * @link https://developers.paystack.co/reference#disable-otp-requirement-for-transfers
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function disableOtp($params = null)
     {
@@ -96,9 +101,10 @@ class Transfer extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#finalize-disabling-of-otp-requirement-for-transfers
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function disableOtpFinalize($params)
     {
@@ -110,9 +116,10 @@ class Transfer extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#enable-otp-requirement-for-transfers
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function enableOtp($params = null)
     {

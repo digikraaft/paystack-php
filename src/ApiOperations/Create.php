@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack\ApiOperations;
 
 trait Create
@@ -8,7 +7,7 @@ trait Create
     /**
      * @param array $params
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function create($params)
     {

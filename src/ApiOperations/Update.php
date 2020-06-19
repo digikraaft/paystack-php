@@ -1,16 +1,14 @@
 <?php
 
-
 namespace Digikraaft\Paystack\ApiOperations;
 
 trait Update
 {
     /**
-     * @param string $id Resource id
+     * @param string $id     Resource id
+     * @param array  $params
      *
-     * @param array $params
-     *
-     * @return array|Object
+     * @return array|object
      */
     public static function update(string $id, $params)
     {

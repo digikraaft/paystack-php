@@ -18,7 +18,7 @@ class Paystack
     /**
      * @return string the API key used for requests
      */
-    public static function getApiKey() : string
+    public static function getApiKey(): string
     {
         return self::$apiKey;
     }
@@ -28,15 +28,15 @@ class Paystack
      *
      * @param string $apiKey
      */
-    public static function setApiKey($apiKey) : void
+    public static function setApiKey($apiKey): void
     {
         self::validateApiKey($apiKey);
         self::$apiKey = $apiKey;
     }
 
-    private static function validateApiKey($apiKey) : bool
+    private static function validateApiKey($apiKey): bool
     {
-        if ($apiKey == '' || ! is_string($apiKey)) {
+        if ($apiKey == '' || !is_string($apiKey)) {
             throw new InvalidArgumentException('Api key must be a string and cannot be empty');
         }
 
