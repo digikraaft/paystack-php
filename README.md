@@ -1,6 +1,8 @@
 # Introduction
 
 ![tests](https://github.com/digikraaft/paystack-php/workflows/run-tests/badge.svg)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/digikraaft/paystack-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/digikraaft/paystack-php/?branch=master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/digikraaft/paystack-php/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
