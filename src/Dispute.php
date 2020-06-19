@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class Dispute extends ApiResource
@@ -13,9 +12,10 @@ class Dispute extends ApiResource
 
     /**
      * @param string $transaction_id
+     *
      * @link https://developers.paystack.co/reference#list-transaction-disputes
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function listTransactionDisputes(string $transaction_id)
     {
@@ -27,10 +27,11 @@ class Dispute extends ApiResource
 
     /**
      * @param string $dispute_id
-     * @param array $params
+     * @param array  $params
+     *
      * @link https://developers.paystack.co/reference#add-evidence
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function addEvidence(string $dispute_id, $params)
     {
@@ -43,9 +44,10 @@ class Dispute extends ApiResource
 
     /**
      * @param string $dispute_id
+     *
      * @link https://developers.paystack.co/reference#get-upload-url
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function getUploadUrl(string $dispute_id)
     {
@@ -57,10 +59,11 @@ class Dispute extends ApiResource
 
     /**
      * @param string $dispute_id
-     * @param array $params
+     * @param array  $params
+     *
      * @link https://developers.paystack.co/reference#resolve-dispute
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function resolve(string $dispute_id, $params)
     {
@@ -73,9 +76,10 @@ class Dispute extends ApiResource
 
     /**
      * @param array $params
+     *
      * @link https://developers.paystack.co/reference#export-disputes
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function export($params)
     {

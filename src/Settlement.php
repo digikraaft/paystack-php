@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class Settlement extends ApiResource
@@ -9,13 +8,13 @@ class Settlement extends ApiResource
 
     use ApiOperations\All;
 
-
     /**
      * @param string $settlement_id
-     * @param array $params
+     * @param array  $params
+     *
      * @link https://developers.paystack.co/reference#fetch-settlement-transactions
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function fetchSettlementTransactions($settlement_id, $params)
     {

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class BulkCharge extends ApiResource
@@ -10,13 +9,14 @@ class BulkCharge extends ApiResource
     use ApiOperations\All;
     use ApiOperations\Fetch;
 
-
     /**
      * @param string $reference A reference for this batch.
-     * @param array $params
-     * @return array | Object
+     * @param array  $params
+     *
      * @throws Exceptions\InvalidArgumentException
      * @throws Exceptions\IsNullException
+     *
+     * @return array | Object
      *
      * @link https://developers.paystack.co/reference#initiate-bulk-charge
      */
@@ -30,7 +30,8 @@ class BulkCharge extends ApiResource
 
     /**
      * @param string $batch_id_or_code An ID or code for the batch whose charges you want to retrieve.
-     * @param array $params
+     * @param array  $params
+     *
      * @link https://developers.paystack.co/reference#fetch-charges-in-a-batch
      *
      * @return array | Object
@@ -46,6 +47,7 @@ class BulkCharge extends ApiResource
 
     /**
      * @param string $batch_code
+     *
      * @link https://developers.paystack.co/reference#pause-bulk-charge-batch
      *
      * @return array | Object
@@ -60,9 +62,10 @@ class BulkCharge extends ApiResource
 
     /**
      * @param string $batch_code
+     *
      * @link https://developers.paystack.co/reference#resume-bulk-charge-batch
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function resume($batch_code)
     {

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
@@ -18,7 +17,6 @@ class ApiResource
     {
         return Paystack::$apiBase;
     }
-
 
     /**
      * @return string the endpoint URL for the given class
@@ -74,7 +72,7 @@ class ApiResource
     {
         $url = self::endPointUrl($slug);
         if (! empty($params)) {
-            $url .= '?'. http_build_query($params);
+            $url .= '?'.http_build_query($params);
         }
 
         return $url;

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class PaymentPage extends ApiResource
@@ -14,8 +13,10 @@ class PaymentPage extends ApiResource
 
     /**
      * @param string $slug details at
+     *
      * @link https://developers.paystack.co/reference#check-slug-availability
-     * @return array|Object
+     *
+     * @return array|object
      */
     public static function checkSlugAvailability($slug)
     {
@@ -27,9 +28,11 @@ class PaymentPage extends ApiResource
 
     /**
      * @param string $page_id
-     * @param array $params details at
+     * @param array  $params  details at
+     *
      * @link https://developers.paystack.co/reference#add-products
-     * @return array|Object
+     *
+     * @return array|object
      */
     public static function addProducts($page_id, $params)
     {

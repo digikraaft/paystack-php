@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack\Tests;
 
 use Digikraaft\Paystack\ApiOperations\All;
@@ -22,7 +21,6 @@ class ApiOperationsAllTest extends TestCase
         $mock->list();
         $resources = $mock->expects(\Digikraaft\Paystack\Customer::class);
         $this->assertEquals('object', gettype($resources));
-
 
 //        $mock = $this->getMockForTrait('alias:All', [], '', true, true, true, ['list'], false);
 //        $mock->expects($this->once())

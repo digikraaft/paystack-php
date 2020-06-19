@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 use Digikraaft\Paystack\Tests\TestHelper;

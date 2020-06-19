@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class Subscription extends ApiResource
@@ -13,9 +12,10 @@ class Subscription extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#disable-subscription
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function disable($params)
     {
@@ -27,9 +27,10 @@ class Subscription extends ApiResource
 
     /**
      * @param array $params details at
+     *
      * @link https://developers.paystack.co/reference#enable-subscription
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function enable($params)
     {

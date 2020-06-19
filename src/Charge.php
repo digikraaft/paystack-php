@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class Charge extends ApiResource
@@ -8,19 +7,19 @@ class Charge extends ApiResource
     const OBJECT_NAME = 'charge';
 
     /**
-     * Paystack Documentation Reference
-     * @link https://developers.paystack.co/reference#charge
+     * Paystack Documentation Reference.
      *
+     * @link https://developers.paystack.co/reference#charge
      */
     use ApiOperations\Create;
     use ApiOperations\Fetch;
 
-
     /**
      * @param array $params
+     *
      * @link https://developers.paystack.co/reference#submit-pin
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function submitPin($params)
     {
@@ -32,9 +31,10 @@ class Charge extends ApiResource
 
     /**
      * @param array $params
+     *
      * @link https://developers.paystack.co/reference#submit-otp
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function submitOtp($params)
     {
@@ -46,9 +46,10 @@ class Charge extends ApiResource
 
     /**
      * @param array $params
+     *
      * @link https://developers.paystack.co/reference#submit-phone
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function submitPhone($params)
     {
@@ -60,9 +61,10 @@ class Charge extends ApiResource
 
     /**
      * @param array $params dates in the format 2016-09-21
+     *
      * @link https://developers.paystack.co/reference#submit-birthday
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function submitBirthday($params)
     {
@@ -74,9 +76,10 @@ class Charge extends ApiResource
 
     /**
      * @param string $reference Charge reference to check
+     *
      * @link https://developers.paystack.co/reference#check-pending-charge
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function checkPending($reference)
     {

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Digikraaft\Paystack;
 
 class TransferRecipient extends ApiResource
@@ -13,9 +12,10 @@ class TransferRecipient extends ApiResource
 
     /**
      * @param $recipient_code
+     *
      * @link https://developers.paystack.co/reference#delete-transfer-recipient
      *
-     * @return array|Object
+     * @return array|object
      */
     public static function delete($recipient_code)
     {
