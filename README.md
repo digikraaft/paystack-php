@@ -1,6 +1,5 @@
 # Introduction
-
-![tests](https://github.com/digikraaft/paystack-php/workflows/run-tests/badge.svg)
+[![Build Status](https://travis-ci.com/digikraaft/paystack-php.svg?branch=master)](https://travis-ci.com/digikraaft/paystack-php)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/digikraaft/paystack-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/digikraaft/paystack-php/?branch=master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/digikraaft/paystack-php/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
