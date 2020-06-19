@@ -71,7 +71,7 @@ class ApiResource
     public static function buildQueryString($slug, $params = null)
     {
         $url = self::endPointUrl($slug);
-        if (!empty($params)) {
+        if (! empty($params)) {
             $url .= '?'.http_build_query($params);
         }
 

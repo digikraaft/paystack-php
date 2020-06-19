@@ -36,7 +36,7 @@ class Paystack
 
     private static function validateApiKey($apiKey): bool
     {
-        if ($apiKey == '' || !is_string($apiKey)) {
+        if ($apiKey == '' || ! is_string($apiKey)) {
             throw new InvalidArgumentException('Api key must be a string and cannot be empty');
         }
 

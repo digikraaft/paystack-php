@@ -33,13 +33,13 @@ trait Request
     public static function validateParams($params = null, $required = false): void
     {
         if ($required) {
-            if (empty($params) || !is_array($params)) {
+            if (empty($params) || ! is_array($params)) {
                 $message = 'The parameter passed must be an array and must not be empty';
 
                 throw new InvalidArgumentException($message);
             }
         }
-        if ($params && !is_array($params)) {
+        if ($params && ! is_array($params)) {
             $message = 'The parameter passed must be an array';
 
             throw new InvalidArgumentException($message);
@@ -81,10 +81,10 @@ trait Request
         static::$client = new Client(
             [
                 'base_uri' => Paystack::$apiBase,
-                'headers'  => [
+                'headers' => [
                     'Authorization' => $authBearer,
-                    'Content-Type'  => 'application/json',
-                    'Accept'        => 'application/json',
+                    'Content-Type' => 'application/json',
+                    'Accept' => 'application/json',
                 ],
             ]
         );

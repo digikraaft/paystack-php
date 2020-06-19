@@ -21,7 +21,7 @@ abstract class Util
         if (null === self::$isMbstringAvailable) {
             self::$isMbstringAvailable = function_exists('mb_detect_encoding');
 
-            if (!self::$isMbstringAvailable) {
+            if (! self::$isMbstringAvailable) {
                 trigger_error('It looks like the mbstring extension is not enabled. '.
                     'UTF-8 strings will not properly be encoded. Ask your system '.
                     'administrator to enable the mbstring extension.', E_USER_WARNING);
@@ -44,7 +44,7 @@ abstract class Util
      */
     public static function convertArrayToObject($resp)
     {
-        if (!is_array($resp)) {
+        if (! is_array($resp)) {
             $message = 'The response passed must be an array';
 
             throw new InvalidArgumentException($message);

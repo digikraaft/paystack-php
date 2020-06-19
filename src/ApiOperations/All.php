@@ -13,7 +13,7 @@ trait All
     {
         self::validateParams($params);
         $url = static::classUrl();
-        if (!empty($params)) {
+        if (! empty($params)) {
             $url .= '?'.http_build_query($params);
         }
 
