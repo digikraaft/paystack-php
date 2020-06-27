@@ -21,23 +21,5 @@ class ApiOperationsAllTest extends TestCase
         $mock->list();
         $resources = $mock->expects(\Digikraaft\Paystack\Customer::class);
         $this->assertEquals('object', gettype($resources));
-
-//        $mock = $this->getMockForTrait('alias:All', [], '', true, true, true, ['list'], false);
-//        $mock->expects($this->once())
-//            ->method('list');
-//        $mock->list();
-
-//        /** @var All $mock */
-//        $mock = $this->buildMock();
-//
-//        $mock->expects($this->any())
-//            ->method('list')
-//            ->will($this->returnValue(true));
-//
-//        $this->assertTrue($mock->concreteMethod());
-//        $mock->list();
-
-//        $array = $this->list();
-//        $this->assertEquals('array', gettype([$array]));
     }
 }
