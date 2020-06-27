@@ -2,7 +2,6 @@
 
 namespace Digikraaft\Paystack\Tests;
 
-use Digikraaft\Paystack\ApiOperations\All;
 use Mockery as mk;
 use PHPUnit\Framework\TestCase;
 
