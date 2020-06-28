@@ -127,7 +127,7 @@ For detailed documentation, check the wiki page [here](../../wiki)
 composer test
 ```
 ## More Good Stuff
-Check [here](https://github.com/digikraaft) for more of awesome free stuff!
+Check [here](https://github.com/digikraaft) for more awesome free stuff!
 
 ## Changelog
 
