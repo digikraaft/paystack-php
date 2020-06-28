@@ -126,6 +126,8 @@ For detailed documentation, check the wiki page [here](../../wiki)
 ``` bash
 composer test
 ```
+## More Good Stuff
+Check [here](https://github.com/digikraaft) for more of awesome free stuff!
 
 ## Changelog
 
