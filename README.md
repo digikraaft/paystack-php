@@ -130,11 +130,11 @@ composer test
 Check [here](https://github.com/digikraaft) for more awesome free stuff!
 
 ## Alternatives
-[paystack-php](https://github.com/yabacon/paystack-php)
-[perfectmak/paystack-php](https://github.com/perfectmak/paystack-php)
-[matscode/paystack-php](https://github.com/matscode/paystack)
-[PHP Library For Paystack.co (Unofficial)](https://github.com/MalikAbiola/paystack-php-lib)
-[Cakephp-Paystack](https://github.com/jtad009/cakephp-paystack)
+- [paystack-php](https://github.com/yabacon/paystack-php)
+- [perfectmak/paystack-php](https://github.com/perfectmak/paystack-php)
+- [matscode/paystack-php](https://github.com/matscode/paystack)
+- [PHP Library For Paystack.co (Unofficial)](https://github.com/MalikAbiola/paystack-php-lib)
+- [Cakephp-Paystack](https://github.com/jtad009/cakephp-paystack)
 
 ## Changelog
 
