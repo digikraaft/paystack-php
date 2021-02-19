@@ -12,7 +12,7 @@ class Settlement extends ApiResource
      * @param string $settlement_id
      * @param array  $params
      *
-     * @link https://developers.paystack.co/reference#fetch-settlement-transactions
+     * @link https://paystack.com/docs/api/#settlement-transactions
      *
      * @return array|object
      */

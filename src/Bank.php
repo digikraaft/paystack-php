@@ -9,7 +9,7 @@ class Bank extends ApiResource
     /**
      * @param string $bvn
      *
-     * @link https://developers.paystack.co/reference#resolve-bvn
+     * @link https://paystack.com/docs/api/#verification-resolve-bvn
      *
      * @return array|object
      */
@@ -22,9 +22,23 @@ class Bank extends ApiResource
     }
 
     /**
+     * @param string $bvn
+     * @return array|object
+     * @throws Exceptions\InvalidArgumentException
+     * @throws Exceptions\IsNullException
+     * @link https://paystack.com/docs/api/#verification-resolve-bvn-premium
+     */
+    public static function resolveBvnPremium(string $bvn)
+    {
+        $url = "identity/bvn/resolve/{$bvn}";
+
+        return static::staticRequest('GET', $url);
+    }
+
+    /**
      * @param array $params
      *
-     * @link https://developers.paystack.co/reference#match-bvn
+     * @link https://paystack.com/docs/api/#verification-match-bvn
      *
      * @return array|object
      */
@@ -39,7 +53,7 @@ class Bank extends ApiResource
     /**
      * @param array $params
      *
-     * @link https://developers.paystack.co/reference#resolve-account-number
+     * @link https://paystack.com/docs/api/#verification-resolve-account
      *
      * @return array|object
      */
@@ -54,7 +68,7 @@ class Bank extends ApiResource
     /**
      * @param string $bin
      *
-     * @link https://developers.paystack.co/reference#resolve-card-bin
+     * @link https://paystack.com/docs/api/#verification-resolve-card
      *
      * @return array|object
      */

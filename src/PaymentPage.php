@@ -14,7 +14,7 @@ class PaymentPage extends ApiResource
     /**
      * @param string $slug details at
      *
-     * @link https://developers.paystack.co/reference#check-slug-availability
+     * @link https://paystack.com/docs/api/#page-check-slug
      *
      * @return array|object
      */
@@ -30,7 +30,7 @@ class PaymentPage extends ApiResource
      * @param string $page_id
      * @param array  $params  details at
      *
-     * @link https://developers.paystack.co/reference#add-products
+     * @link https://paystack.com/docs/api/#page-add-products
      *
      * @return array|object
      */

@@ -13,7 +13,7 @@ class Dispute extends ApiResource
     /**
      * @param string $transaction_id
      *
-     * @link https://developers.paystack.co/reference#list-transaction-disputes
+     * @link https://paystack.com/docs/api/#dispute-transaction
      *
      * @return array|object
      */
@@ -29,7 +29,7 @@ class Dispute extends ApiResource
      * @param string $dispute_id
      * @param array  $params
      *
-     * @link https://developers.paystack.co/reference#add-evidence
+     * @link https://paystack.com/docs/api/#dispute-evidence
      *
      * @return array|object
      */
@@ -45,7 +45,7 @@ class Dispute extends ApiResource
     /**
      * @param string $dispute_id
      *
-     * @link https://developers.paystack.co/reference#get-upload-url
+     * @link https://paystack.com/docs/api/#dispute-upload-url
      *
      * @return array|object
      */
@@ -61,7 +61,7 @@ class Dispute extends ApiResource
      * @param string $dispute_id
      * @param array  $params
      *
-     * @link https://developers.paystack.co/reference#resolve-dispute
+     * @link https://paystack.com/docs/api/#dispute-resolve
      *
      * @return array|object
      */
@@ -77,7 +77,7 @@ class Dispute extends ApiResource
     /**
      * @param array $params
      *
-     * @link https://developers.paystack.co/reference#export-disputes
+     * @link https://paystack.com/docs/api/#dispute-export
      *
      * @return array|object
      */

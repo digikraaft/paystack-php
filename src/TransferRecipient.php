@@ -11,9 +11,22 @@ class TransferRecipient extends ApiResource
     use ApiOperations\Update;
 
     /**
+     * @param array $batch
+     *
+     * @link https://paystack.com/docs/api/#transfer-recipient-bulk
+     *
+     * @return array|object
+     */
+    public static function createBulk($batch)
+    {
+        $url = static::endPointUrl('bulk');
+        return static::staticRequest('POST', $url, $batch);
+    }
+
+    /**
      * @param $recipient_code
      *
-     * @link https://developers.paystack.co/reference#delete-transfer-recipient
+     * @link https://paystack.com/docs/api/#transfer-recipient-delete
      *
      * @return array|object
      */

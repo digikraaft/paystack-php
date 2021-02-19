@@ -12,7 +12,7 @@ class Transfer extends ApiResource
     /**
      * @param array $params
      *
-     * @link https://developers.paystack.co/reference#initiate-transfer
+     * @link https://paystack.com/docs/api/#transfer-initiate
      *
      * @return array|object
      */
@@ -27,7 +27,7 @@ class Transfer extends ApiResource
     /**
      * @param string $reference Transfer reference. Details at
      *
-     * @link https://developers.paystack.co/reference#verify-transfer
+     * @link https://paystack.com/docs/api/#transfer-verify
      *
      * @return array|object
      */
@@ -42,7 +42,7 @@ class Transfer extends ApiResource
     /**
      * @param array $params
      *
-     * @link https://developers.paystack.co/reference#finalize-transfer
+     * @link https://paystack.com/docs/api/#transfer-finalize
      *
      * @return array|object
      */
@@ -57,7 +57,7 @@ class Transfer extends ApiResource
     /**
      * @param array $params
      *
-     * @link https://developers.paystack.co/reference#initiate-bulk-transfer
+     * @link https://paystack.com/docs/api/#transfer-bulk
      *
      * @return array|object
      */

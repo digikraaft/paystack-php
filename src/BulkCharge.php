@@ -18,7 +18,7 @@ class BulkCharge extends ApiResource
      *
      * @return array | Object
      *
-     * @link https://developers.paystack.co/reference#initiate-bulk-charge
+     * @link https://paystack.com/docs/api/#bulk-charge-initiate
      */
     public static function initiate($reference, $params)
     {
@@ -29,10 +29,27 @@ class BulkCharge extends ApiResource
     }
 
     /**
+     * @param string $id_or_code
+     * @param null $params
+     * @return array|object
+     * @throws Exceptions\InvalidArgumentException
+     * @throws Exceptions\IsNullException
+     * @link https://paystack.com/docs/api/#bulk-charge-fetch-batch
+     */
+    public static function fetchBulkChargeBatch($id_or_code, $params = null)
+    {
+        self::validateParams($params);
+        $url = "{$id_or_code}";
+        $url = static::buildQueryString($url, $params);
+
+        return static::staticRequest('GET', $url);
+    }
+
+    /**
      * @param string $batch_id_or_code An ID or code for the batch whose charges you want to retrieve.
      * @param array  $params
      *
-     * @link https://developers.paystack.co/reference#fetch-charges-in-a-batch
+     * @link https://paystack.com/docs/api/#bulk-charge-fetch-charge
      *
      * @return array | Object
      */
@@ -48,7 +65,7 @@ class BulkCharge extends ApiResource
     /**
      * @param string $batch_code
      *
-     * @link https://developers.paystack.co/reference#pause-bulk-charge-batch
+     * @link https://paystack.com/docs/api/#bulk-charge-pause
      *
      * @return array | Object
      */
@@ -63,7 +80,7 @@ class BulkCharge extends ApiResource
     /**
      * @param string $batch_code
      *
-     * @link https://developers.paystack.co/reference#resume-bulk-charge-batch
+     * @link https://paystack.com/docs/api/#bulk-charge-resume
      *
      * @return array|object
      */

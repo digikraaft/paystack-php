@@ -12,7 +12,7 @@ class Transaction extends ApiResource
     /**
      * @param array $params details at
      *
-     * @link https://developers.paystack.co/reference#initialize-a-transaction
+     * @link https://paystack.com/docs/api/#transaction-initialize
      *
      * @return array|object
      */
@@ -27,7 +27,7 @@ class Transaction extends ApiResource
     /**
      * @param string $reference details at
      *
-     * @link https://developers.paystack.co/reference#verify-transaction
+     * @link https://paystack.com/docs/api/#transaction-verify
      *
      * @return array|object
      */
@@ -42,7 +42,7 @@ class Transaction extends ApiResource
     /**
      * @param array $params details of parameter content at
      *
-     * @link https://developers.paystack.co/reference#charge-authorization
+     * @link https://paystack.com/docs/api/#transaction-charge-authorization
      *
      * @return array|object
      */
@@ -55,9 +55,24 @@ class Transaction extends ApiResource
     }
 
     /**
+     * @param array $params details of parameter content at
+     *
+     * @link https://paystack.com/docs/api/#transaction-check-authorization
+     *
+     * @return array|object
+     */
+    public static function checkAuthorization($params)
+    {
+        self::validateParams($params, true);
+        $url = static::endPointUrl('check_authorization');
+
+        return static::staticRequest('POST', $url, $params);
+    }
+
+    /**
      * @param string $transaction_id details at
      *
-     * @link https://developers.paystack.co/reference#view-transaction-timeline
+     * @link https://paystack.com/docs/api/#transaction-view-timeline
      *
      * @return array|object
      */
@@ -71,7 +86,7 @@ class Transaction extends ApiResource
     /**
      * @param array $params details at
      *
-     * @link https://developers.paystack.co/reference#transaction-totals
+     * @link https://paystack.com/docs/api/#transaction-totals
      *
      * @return array|object
      */
@@ -86,7 +101,7 @@ class Transaction extends ApiResource
     /**
      * @param array $params details at
      *
-     * @link https://developers.paystack.co/reference#export-transactions
+     * @link https://paystack.com/docs/api/#transaction-export
      *
      * @return array|object
      */
@@ -116,7 +131,7 @@ class Transaction extends ApiResource
     /**
      * @param array $params details at
      *
-     * @link https://developers.paystack.co/reference#partial-debit
+     * @link https://paystack.com/docs/api/#transaction-partial-debit
      *
      * @return array|object
      */

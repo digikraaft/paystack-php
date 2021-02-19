@@ -14,7 +14,7 @@ class Invoice extends ApiResource
     /**
      * @param string $invoice_code details at
      *
-     * @link https://developers.paystack.co/reference#verify-invoice
+     * @link https://paystack.com/docs/api/#invoice-verify
      *
      * @return array|object
      */
@@ -35,7 +35,7 @@ class Invoice extends ApiResource
      *
      * @return array|object
      *
-     * @link https://developers.paystack.co/reference#send-notification
+     * @link https://paystack.com/docs/api/#invoice-send-notification
      */
     public static function notify(string $invoice_id, $params)
     {
@@ -48,7 +48,7 @@ class Invoice extends ApiResource
     /**
      * Get invoice totals for dashboard.
      *
-     * @link https://developers.paystack.co/reference#get-invoice-metrics-for-dashboard
+     * @link https://paystack.com/docs/api/#invoice-total
      *
      * @throws Exceptions\InvalidArgumentException
      * @throws Exceptions\IsNullException
@@ -71,7 +71,7 @@ class Invoice extends ApiResource
      *
      * @return array|object
      *
-     * @link https://developers.paystack.co/reference#finalize-a-draft-invoice
+     * @link https://paystack.com/docs/api/#invoice-finalize
      */
     public static function finalize($invoice_id, $params = null)
     {
@@ -91,7 +91,7 @@ class Invoice extends ApiResource
      *
      * @return array|object
      *
-     * @link https://developers.paystack.co/reference#archive-invoice
+     * @link https://paystack.com/docs/api/#invoice-archive
      */
     public static function archive($invoice_id, $params)
     {

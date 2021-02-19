@@ -13,7 +13,7 @@ class Subscription extends ApiResource
     /**
      * @param array $params details at
      *
-     * @link https://developers.paystack.co/reference#disable-subscription
+     * @link https://paystack.com/docs/api/#subscription-disable
      *
      * @return array|object
      */
@@ -28,7 +28,7 @@ class Subscription extends ApiResource
     /**
      * @param array $params details at
      *
-     * @link https://developers.paystack.co/reference#enable-subscription
+     * @link https://paystack.com/docs/api/#subscription-enable
      *
      * @return array|object
      */

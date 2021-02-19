@@ -12,6 +12,20 @@ class Customer extends ApiResource
     use ApiOperations\Update;
 
     /**
+     * @param $customerCode
+     * @return array|object
+     * @throws Exceptions\InvalidArgumentException
+     * @throws Exceptions\IsNullException
+     * @link https://paystack.com/docs/api/#customer-validate
+     */
+    public static function validate($customerCode)
+    {
+        $url = static::classUrl().'/{$customerCode}/identification';
+
+        return static::staticRequest('POST', $url);
+    }
+
+    /**
      * @param array $params containing the customer code of the customer to white/black list and
      *                      one can be one of the possible risk actions:
      *                      default or deny:
@@ -22,14 +36,14 @@ class Customer extends ApiResource
      *
      * @return array|object
      *
-     * @link https://developers.paystack.co/reference#whiteblacklist-customer
+     * @link https://paystack.com/docs/api/#customer-whitelist-blacklist
      */
     public static function whiteOrBlackList($params)
     {
         self::validateParams($params);
         $url = static::classUrl().'/set_risk_action';
 
-        return static::staticRequest('post', $url, $params);
+        return static::staticRequest('POST', $url, $params);
     }
 
     /**
@@ -40,13 +54,13 @@ class Customer extends ApiResource
      *
      * @return array|object
      *
-     * @link https://developers.paystack.co/reference#deactivate-authorization
+     * @link https://paystack.com/docs/api/#customer-deactivate-authorization
      */
     public static function deactivateAuthorization($params)
     {
         self::validateParams($params);
         $url = static::classUrl().'/deactivate_authorization';
 
-        return static::staticRequest('post', $url, $params, 'arr');
+        return static::staticRequest('POST', $url, $params, 'arr');
     }
 }

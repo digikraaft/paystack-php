@@ -9,7 +9,7 @@ class Integration extends ApiResource
     /**
      * Paystack Documentation Reference.
      *
-     * @link https://developers.paystack.co/reference#fetch-payment-session-timeout
+     * @link https://paystack.com/docs/api/#control-panel-fetch-timeout
      *
      * @return array|object
      */
@@ -24,7 +24,7 @@ class Integration extends ApiResource
      * @param $params the time before stopping session (in seconds). Set to 0 to cancel session timeouts
      * Paystack Documentation Reference
      *
-     * @link https://developers.paystack.co/reference#update-payment-session-timeout
+     * @link https://paystack.com/docs/api/#control-panel-update-timeout
      *
      * @return array|object
      */

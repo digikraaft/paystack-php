@@ -17,7 +17,7 @@ class Charge extends ApiResource
     /**
      * @param array $params
      *
-     * @link https://developers.paystack.co/reference#submit-pin
+     * @link https://paystack.com/docs/api/#charge-submit-pin
      *
      * @return array|object
      */
@@ -32,7 +32,7 @@ class Charge extends ApiResource
     /**
      * @param array $params
      *
-     * @link https://developers.paystack.co/reference#submit-otp
+     * @link https://paystack.com/docs/api/#charge-submit-otp
      *
      * @return array|object
      */
@@ -47,7 +47,7 @@ class Charge extends ApiResource
     /**
      * @param array $params
      *
-     * @link https://developers.paystack.co/reference#submit-phone
+     * @link https://paystack.com/docs/api/#charge-submit-phone
      *
      * @return array|object
      */
@@ -62,7 +62,7 @@ class Charge extends ApiResource
     /**
      * @param array $params dates in the format 2016-09-21
      *
-     * @link https://developers.paystack.co/reference#submit-birthday
+     * @link https://paystack.com/docs/api/#charge-submit-birthday
      *
      * @return array|object
      */
@@ -75,9 +75,24 @@ class Charge extends ApiResource
     }
 
     /**
+     * @param array $params
+     *
+     * @link https://paystack.com/docs/api/#charge-submit-address
+     *
+     * @return array|object
+     */
+    public static function submitAddress($params)
+    {
+        self::validateParams($params, true);
+        $url = static::endPointUrl('submit_address');
+
+        return static::staticRequest('POST', $url, $params);
+    }
+
+    /**
      * @param string $reference Charge reference to check
      *
-     * @link https://developers.paystack.co/reference#check-pending-charge
+     * @link https://paystack.com/docs/api/#charge-check
      *
      * @return array|object
      */

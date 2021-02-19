@@ -11,4 +11,12 @@ class Verification extends ApiResource
      * @link https://developers.paystack.co/reference#resolve-phone-number
      */
     use ApiOperations\All;
+
+    public static function initiate($params)
+    {
+        self::validateParams($params, true);
+        $url = static::classUrl();
+
+        return static::staticRequest('POST', $url, $params);
+    }
 }
