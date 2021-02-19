@@ -1,8 +1,10 @@
 # Changelog
 
 All notable changes to `paystack-php` will be documented in this file
+## v1.2.0 - 2021-02-19
+- Updated composer dependency for guzzle
 
-## v1.0.3 - 2021-02-19
+## v1.1.0 - 2021-02-19
 - Updated doc links to match the new API docs
 - Added `Bank::resolveBvnPremium(string $bvn)` method
 - Added `BulkCharge::fetchBulkChargeBatch(string $id_or_code, $params = nul)` method
