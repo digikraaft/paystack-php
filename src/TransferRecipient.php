@@ -20,6 +20,7 @@ class TransferRecipient extends ApiResource
     public static function createBulk($batch)
     {
         $url = static::endPointUrl('bulk');
+
         return static::staticRequest('POST', $url, $batch);
     }
 
