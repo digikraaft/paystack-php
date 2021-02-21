@@ -1,6 +1,11 @@
 # Changelog
 
 All notable changes to `paystack-php` will be documented in this file
+
+## v1.2.1 - 2021-02-21
+- Fixed bank related endpoints
+
+
 ## v1.2.0 - 2021-02-19
 - Updated composer dependency for guzzle
 
