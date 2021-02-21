@@ -4,6 +4,8 @@ namespace Digikraaft\Paystack;
 
 class Bank extends ApiResource
 {
+    const OBJECT_NAME = 'bank';
+
     use ApiOperations\All;
 
     /**
