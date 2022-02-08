@@ -9,14 +9,14 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest]
-        php: [8.0,8.1]
+        php: [7.4]
         dependency-version: [prefer-lowest, prefer-stable]
 
     name: P${{ matrix.php }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v1
 
       - name: Cache dependencies
         uses: actions/cache@v1
