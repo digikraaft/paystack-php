@@ -2,6 +2,10 @@
 
 All notable changes to `paystack-php` will be documented in this file
 
+## v2.0.0 - 2022-02-08
+- Added support for PHP-8
+- Fixed the vulnerable action for actions/checkout
+
 ## v1.2.1 - 2021-02-21
 - Fixed bank related endpoints
 
