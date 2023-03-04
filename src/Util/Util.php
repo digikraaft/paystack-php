@@ -10,13 +10,8 @@ abstract class Util
     private static $isMbstringAvailable = null;
     private static $isHashEqualsAvailable = null;
 
-    /**
-     * @param mixed|string $value a string to UTF8-encode
-     *
-     * @return mixed|string the UTF8-encoded string, or the object passed in if
-     *                      it wasn't a string
-     */
-    public static function utf8($value)
+
+    public static function utf8(mixed $value): mixed
     {
         if (null === self::$isMbstringAvailable) {
             self::$isMbstringAvailable = function_exists('mb_detect_encoding');
@@ -37,25 +32,16 @@ abstract class Util
 
     /**
      * Converts a response from the Paystack API to the corresponding PHP object.
-     *
-     * @param array $resp the response from the Paystack API
-     *
-     * @return array|object
      */
-    public static function convertArrayToObject($resp)
+    public static function convertArrayToObject(array $resp): array|object
     {
-        if (! is_array($resp)) {
-            $message = 'The response passed must be an array';
-
-            throw new InvalidArgumentException($message);
-        }
 
         $object = new stdClass();
 
         return self::arrayToObject($resp, $object);
     }
 
-    private static function arrayToObject($array, &$obj)
+    private static function arrayToObject($array, &$obj): object
     {
         foreach ($array as $key => $value) {
             if (is_array($value)) {

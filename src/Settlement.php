@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Settlement extends ApiResource
 {
     const OBJECT_NAME = 'settlement';
@@ -9,14 +11,11 @@ class Settlement extends ApiResource
     use ApiOperations\All;
 
     /**
-     * @param string $settlement_id
-     * @param array  $params
      *
      * @link https://paystack.com/docs/api/#settlement-transactions
-     *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function fetchSettlementTransactions($settlement_id, $params)
+    public static function fetchSettlementTransactions(string $settlement_id, ?array $params = null): array|object
     {
         self::validateParams($params);
         $url = "{$settlement_id}/transactions";

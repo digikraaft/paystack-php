@@ -26,9 +26,8 @@ class Paystack
     /**
      * Sets the API key to be used for requests.
      *
-     * @param string $apiKey
      */
-    public static function setApiKey($apiKey): void
+    public static function setApiKey(string $apiKey): void
     {
         self::validateApiKey($apiKey);
         self::$apiKey = $apiKey;

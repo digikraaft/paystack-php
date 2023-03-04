@@ -4,12 +4,8 @@ namespace Digikraaft\Paystack\ApiOperations;
 
 trait Create
 {
-    /**
-     * @param array $params
-     *
-     * @return array|object
-     */
-    public static function create($params)
+
+    public static function create($params): array|object
     {
         self::validateParams($params, true);
         $url = static::classUrl();

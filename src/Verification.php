@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Verification extends ApiResource
 {
     const OBJECT_NAME = 'verifications';
@@ -12,7 +14,10 @@ class Verification extends ApiResource
      */
     use ApiOperations\All;
 
-    public static function initiate($params)
+    /**
+     * @throws InvalidArgumentException
+     */
+    public static function initiate(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::classUrl();

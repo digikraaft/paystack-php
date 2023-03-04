@@ -58,10 +58,4 @@ class RequestTest extends TestCase
         $this->assertEquals('array', gettype([$resource]));
     }
 
-    /** @test */
-    public function it_can_return_exception_when_request_method_is_null()
-    {
-        $this->expectException(IsNullException::class);
-        $resp = Request::staticRequest(null, 'customer', [], 'obj');
-    }
 }

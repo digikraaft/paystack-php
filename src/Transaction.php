@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Transaction extends ApiResource
 {
     const OBJECT_NAME = 'transaction';
@@ -10,13 +12,11 @@ class Transaction extends ApiResource
     use ApiOperations\Fetch;
 
     /**
-     * @param array $params details at
      *
      * @link https://paystack.com/docs/api/#transaction-initialize
-     *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function initialize($params)
+    public static function initialize(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('initialize');
@@ -25,13 +25,12 @@ class Transaction extends ApiResource
     }
 
     /**
-     * @param string $reference details at
      *
      * @link https://paystack.com/docs/api/#transaction-verify
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function verify($reference)
+    public static function verify(string $reference): array|object
     {
         $url = "verify/{$reference}";
         $url = static::endPointUrl($url);
@@ -40,13 +39,12 @@ class Transaction extends ApiResource
     }
 
     /**
-     * @param array $params details of parameter content at
      *
      * @link https://paystack.com/docs/api/#transaction-charge-authorization
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function chargeAuthorization($params)
+    public static function chargeAuthorization(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('charge_authorization');
@@ -55,13 +53,11 @@ class Transaction extends ApiResource
     }
 
     /**
-     * @param array $params details of parameter content at
      *
      * @link https://paystack.com/docs/api/#transaction-check-authorization
-     *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function checkAuthorization($params)
+    public static function checkAuthorization(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('check_authorization');
@@ -70,13 +66,11 @@ class Transaction extends ApiResource
     }
 
     /**
-     * @param string $transaction_id details at
-     *
      * @link https://paystack.com/docs/api/#transaction-view-timeline
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function timeline($transaction_id)
+    public static function timeline(string $transaction_id): array|object
     {
         $url = static::resourceUrl($transaction_id);
 
@@ -84,13 +78,11 @@ class Transaction extends ApiResource
     }
 
     /**
-     * @param array $params details at
      *
      * @link https://paystack.com/docs/api/#transaction-totals
      *
-     * @return array|object
      */
-    public static function totals($params)
+    public static function totals(?array $params = null): array|object
     {
         self::validateParams($params, true);
         $url = static::buildQueryString('totals', $params);
@@ -99,13 +91,11 @@ class Transaction extends ApiResource
     }
 
     /**
-     * @param array $params details at
-     *
+     * @throws InvalidArgumentException
      * @link https://paystack.com/docs/api/#transaction-export
      *
-     * @return array|object
      */
-    public static function export($params)
+    public static function export(array $params): array|object
     {
         self::validateParams($params);
         $url = static::buildQueryString('export', $params);
@@ -114,13 +104,11 @@ class Transaction extends ApiResource
     }
 
     /**
-     * @param array $params details at
-     *
      * @link https://developers.paystack.co/reference#request-reauthorization
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function requestReauthorization($params)
+    public static function requestReauthorization(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('request_reauthorization');
@@ -129,13 +117,12 @@ class Transaction extends ApiResource
     }
 
     /**
-     * @param array $params details at
      *
      * @link https://paystack.com/docs/api/#transaction-partial-debit
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function partialDebit($params)
+    public static function partialDebit(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('partial_debit');

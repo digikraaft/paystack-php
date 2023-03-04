@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Bank extends ApiResource
 {
     const OBJECT_NAME = 'bank';
@@ -9,13 +11,11 @@ class Bank extends ApiResource
     use ApiOperations\All;
 
     /**
-     * @param string $bvn
      *
+     * @throws InvalidArgumentException
      * @link https://paystack.com/docs/api/#verification-resolve-bvn
-     *
-     * @return array|object
      */
-    public static function resolveBvn(string $bvn)
+    public static function resolveBvn(string $bvn): array|object
     {
         $url = "resolve_bvn/{$bvn}";
         $url = static::endPointUrl($url);
@@ -24,13 +24,11 @@ class Bank extends ApiResource
     }
 
     /**
-     * @param string $bvn
-     * @return array|object
+     *
      * @throws Exceptions\InvalidArgumentException
-     * @throws Exceptions\IsNullException
      * @link https://paystack.com/docs/api/#verification-resolve-bvn-premium
      */
-    public static function resolveBvnPremium(string $bvn)
+    public static function resolveBvnPremium(string $bvn): array|object
     {
         $url = "identity/bvn/resolve/{$bvn}";
 
@@ -38,13 +36,10 @@ class Bank extends ApiResource
     }
 
     /**
-     * @param array $params
-     *
      * @link https://paystack.com/docs/api/#verification-match-bvn
      *
-     * @return array|object
      */
-    public static function bvnMatch($params)
+    public static function bvnMatch(array $params): array|object
     {
         self::validateParams($params);
         $url = urlencode('bvn/match');

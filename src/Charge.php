@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Charge extends ApiResource
 {
     const OBJECT_NAME = 'charge';
@@ -15,13 +17,11 @@ class Charge extends ApiResource
     use ApiOperations\Fetch;
 
     /**
-     * @param array $params
-     *
+     * @throws InvalidArgumentException
      * @link https://paystack.com/docs/api/#charge-submit-pin
      *
-     * @return array|object
      */
-    public static function submitPin($params)
+    public static function submitPin(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('submit_pin');
@@ -30,13 +30,10 @@ class Charge extends ApiResource
     }
 
     /**
-     * @param array $params
      *
      * @link https://paystack.com/docs/api/#charge-submit-otp
-     *
-     * @return array|object
      */
-    public static function submitOtp($params)
+    public static function submitOtp(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('submit_otp');
@@ -45,13 +42,11 @@ class Charge extends ApiResource
     }
 
     /**
-     * @param array $params
      *
      * @link https://paystack.com/docs/api/#charge-submit-phone
      *
-     * @return array|object
      */
-    public static function submitPhone($params)
+    public static function submitPhone(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('submit_phone');
@@ -60,13 +55,12 @@ class Charge extends ApiResource
     }
 
     /**
-     * @param array $params dates in the format 2016-09-21
+     * dates in the format 2016-09-21
      *
      * @link https://paystack.com/docs/api/#charge-submit-birthday
-     *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function submitBirthday($params)
+    public static function submitBirthday(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('submit_birthday');
@@ -75,13 +69,10 @@ class Charge extends ApiResource
     }
 
     /**
-     * @param array $params
-     *
      * @link https://paystack.com/docs/api/#charge-submit-address
      *
-     * @return array|object
      */
-    public static function submitAddress($params)
+    public static function submitAddress(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('submit_address');
@@ -90,13 +81,11 @@ class Charge extends ApiResource
     }
 
     /**
-     * @param string $reference Charge reference to check
      *
      * @link https://paystack.com/docs/api/#charge-check
-     *
-     * @return array|object
+
      */
-    public static function checkPending($reference)
+    public static function checkPending(string $reference): array|object
     {
         $url = "{$reference}";
         $url = static::endPointUrl($url);

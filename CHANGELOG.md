@@ -2,6 +2,9 @@
 
 All notable changes to `paystack-php` will be documented in this file
 
+## v2.2.0 - 2023-03-04
+- Added support for PHP 8.2
+
 ## v2.1.0 - 2022-07-05
 - Added support for PHP 8.1
 

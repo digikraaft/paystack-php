@@ -12,13 +12,11 @@ class Customer extends ApiResource
     use ApiOperations\Update;
 
     /**
-     * @param $customerCode
-     * @return array|object
+     *
      * @throws Exceptions\InvalidArgumentException
-     * @throws Exceptions\IsNullException
      * @link https://paystack.com/docs/api/#customer-validate
      */
-    public static function validate($customerCode)
+    public static function validate(string $customerCode): array|object
     {
         $url = static::classUrl().'/{$customerCode}/identification';
 
@@ -32,13 +30,11 @@ class Customer extends ApiResource
      *                      customer and risk_action
      *                      data = ['customer'=>'CUS_123456789','risk_action'=>'default']
      *
-     * @throws Exceptions\InvalidArgumentException|Exceptions\IsNullException
-     *
-     * @return array|object
+     * @throws Exceptions\InvalidArgumentException
      *
      * @link https://paystack.com/docs/api/#customer-whitelist-blacklist
      */
-    public static function whiteOrBlackList($params)
+    public static function whiteOrBlackList(array $params): array|object
     {
         self::validateParams($params);
         $url = static::classUrl().'/set_risk_action';
@@ -50,13 +46,11 @@ class Customer extends ApiResource
      * @param array $params Authorization code to be deactivated with authorization_code
      *                      as the array key. data = ['authorization_code'=>'aser12334556']
      *
-     * @throws Exceptions\InvalidArgumentException|Exceptions\IsNullException
-     *
-     * @return array|object
+     * @throws Exceptions\InvalidArgumentException
      *
      * @link https://paystack.com/docs/api/#customer-deactivate-authorization
      */
-    public static function deactivateAuthorization($params)
+    public static function deactivateAuthorization(array $params): array|object
     {
         self::validateParams($params);
         $url = static::classUrl().'/deactivate_authorization';

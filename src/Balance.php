@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Balance extends ApiResource
 {
     const OBJECT_NAME = 'balance';
@@ -9,17 +11,13 @@ class Balance extends ApiResource
     use ApiOperations\All;
 
     /**
-     * @param array $params
      *
-     * @throws Exceptions\InvalidArgumentException|Exceptions\IsNullException
-     *
+     * @param array|null $params
      * @return array|object
-     *
+     * @throws InvalidArgumentException
      * @link https://developers.paystack.co/reference#fetch-balance-history
-     *
-     * @returns array|Object
      */
-    public static function ledger($params = null)
+    public static function ledger(?array $params = null): array|object
     {
         self::validateParams($params);
         $url = self::buildQueryString('ledger', $params);

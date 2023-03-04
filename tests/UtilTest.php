@@ -41,11 +41,5 @@ class UtilTest extends TestCase
         ]);
         $this->assertEquals('object', gettype($obj));
     }
-
-    /** @test */
-    public function it_can_return_exception_for_non_array_parameters()
-    {
-        $this->expectException(InvalidArgumentException::class);
-        Util::convertArrayToObject('');
-    }
+    
 }

@@ -4,12 +4,8 @@ namespace Digikraaft\Paystack\ApiOperations;
 
 trait Fetch
 {
-    /**
-     * @param string $id Resource id
-     *
-     * @return array|object
-     */
-    public static function fetch(string $id)
+
+    public static function fetch(string $id): array|object
     {
         $url = static::resourceUrl($id);
 

@@ -10,32 +10,25 @@ class ApiResource
 
     use ApiOperations\Request;
 
-    /**
-     * @return string the base URL for the given class
-     */
-    public static function baseUrl()
+
+    public static function baseUrl(): string
     {
         return Paystack::$apiBase;
     }
 
-    /**
-     * @return string the endpoint URL for the given class
-     */
-    public static function classUrl()
+
+    public static function classUrl(): string
     {
         $base = static::OBJECT_NAME;
 
         return "{$base}";
     }
 
+
     /**
-     * @param null|string $id the ID of the resource
-     *
-     * @throws InvalidArgumentException if $id is null
-     *
-     * @return string the endpoint URL for the given class
+     * @throws InvalidArgumentException
      */
-    public static function resourceUrl($id)
+    public static function resourceUrl(?string $id = null): string
     {
         if (null === $id) {
             $message = 'Invalid ID supplied. ID cannot be null';
@@ -49,12 +42,7 @@ class ApiResource
         return "{$base}/{$extn}";
     }
 
-    /**
-     * @param string $slug
-     *
-     * @return string the endpoint URL for the given class
-     */
-    public static function endPointUrl($slug)
+    public static function endPointUrl(string $slug): string
     {
         $slug = Util\Util::utf8($slug);
         $base = static::classUrl();
@@ -62,13 +50,8 @@ class ApiResource
         return "{$base}/{$slug}";
     }
 
-    /**
-     * @param string $slug
-     * @param $params array of query parameters
-     *
-     * @return string the endpoint URL for the given class
-     */
-    public static function buildQueryString($slug, $params = null)
+
+    public static function buildQueryString(string $slug, array $params = null): string
     {
         $url = self::endPointUrl($slug);
         if (! empty($params)) {

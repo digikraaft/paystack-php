@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Integration extends ApiResource
 {
     const OBJECT_NAME = 'integration';
@@ -11,9 +13,9 @@ class Integration extends ApiResource
      *
      * @link https://paystack.com/docs/api/#control-panel-fetch-timeout
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function fetchPaymentSessionTimeout()
+    public static function fetchPaymentSessionTimeout(): array|object
     {
         $url = static::endPointUrl('payment_session_timeout');
 
@@ -24,11 +26,11 @@ class Integration extends ApiResource
      * @param $params the time before stopping session (in seconds). Set to 0 to cancel session timeouts
      * Paystack Documentation Reference
      *
+     * @throws InvalidArgumentException
      * @link https://paystack.com/docs/api/#control-panel-update-timeout
      *
-     * @return array|object
      */
-    public static function updatePaymentSessionTimeout($params)
+    public static function updatePaymentSessionTimeout($params): array|object
     {
         self::validateParams($params);
         $url = static::endPointUrl('payment_session_timeout');

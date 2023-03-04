@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class PaymentPage extends ApiResource
 {
     const OBJECT_NAME = 'page';
@@ -12,13 +14,11 @@ class PaymentPage extends ApiResource
     use ApiOperations\Update;
 
     /**
-     * @param string $slug details at
      *
      * @link https://paystack.com/docs/api/#page-check-slug
      *
-     * @return array|object
      */
-    public static function checkSlugAvailability($slug)
+    public static function checkSlugAvailability(string $slug): array|object
     {
         $slug = 'check_slug_availability/'.$slug;
         $url = static::endPointUrl($slug);
@@ -27,14 +27,12 @@ class PaymentPage extends ApiResource
     }
 
     /**
-     * @param string $page_id
-     * @param array  $params  details at
      *
      * @link https://paystack.com/docs/api/#page-add-products
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function addProducts($page_id, $params)
+    public static function addProducts(string $page_id, ?array $params = null): array|object
     {
         self::validateParams($params, true);
         $url = static::resourceUrl($page_id).'/product';

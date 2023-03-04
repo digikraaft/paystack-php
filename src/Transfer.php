@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Transfer extends ApiResource
 {
     const OBJECT_NAME = 'transfer';
@@ -10,13 +12,12 @@ class Transfer extends ApiResource
     use ApiOperations\Fetch;
 
     /**
-     * @param array $params
      *
      * @link https://paystack.com/docs/api/#transfer-initiate
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function initiate($params)
+    public static function initiate(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::classUrl();
@@ -25,13 +26,11 @@ class Transfer extends ApiResource
     }
 
     /**
-     * @param string $reference Transfer reference. Details at
-     *
      * @link https://paystack.com/docs/api/#transfer-verify
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function verify($reference)
+    public static function verify(string $reference): array|object
     {
         $url = "verify/{$reference}";
         $url = static::endPointUrl($url);
@@ -40,13 +39,12 @@ class Transfer extends ApiResource
     }
 
     /**
-     * @param array $params
      *
      * @link https://paystack.com/docs/api/#transfer-finalize
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function finalize($params)
+    public static function finalize(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('finalize_transfer');
@@ -55,13 +53,10 @@ class Transfer extends ApiResource
     }
 
     /**
-     * @param array $params
-     *
      * @link https://paystack.com/docs/api/#transfer-bulk
      *
-     * @return array|object
      */
-    public static function initiateBulkTransfer($params)
+    public static function initiateBulkTransfer(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('bulk');
@@ -70,13 +65,10 @@ class Transfer extends ApiResource
     }
 
     /**
-     * @param array $params details at
-     *
      * @link https://developers.paystack.co/reference#resend-otp-for-transfer
      *
-     * @return array|object
      */
-    public static function resendOtp($params)
+    public static function resendOtp(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::classUrl().'/resend_otp';
@@ -85,13 +77,12 @@ class Transfer extends ApiResource
     }
 
     /**
-     * @param null|array $params details at
      *
      * @link https://developers.paystack.co/reference#disable-otp-requirement-for-transfers
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function disableOtp($params = null)
+    public static function disableOtp(?array $params = null): array|object
     {
         self::validateParams($params);
         $url = static::endPointUrl('resend_otp');
@@ -100,13 +91,10 @@ class Transfer extends ApiResource
     }
 
     /**
-     * @param array $params details at
+     *@link https://developers.paystack.co/reference#finalize-disabling-of-otp-requirement-for-transfers
      *
-     * @link https://developers.paystack.co/reference#finalize-disabling-of-otp-requirement-for-transfers
-     *
-     * @return array|object
      */
-    public static function disableOtpFinalize($params)
+    public static function disableOtpFinalize(array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('disable_otp_finalize');
@@ -115,13 +103,12 @@ class Transfer extends ApiResource
     }
 
     /**
-     * @param array $params details at
      *
      * @link https://developers.paystack.co/reference#enable-otp-requirement-for-transfers
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function enableOtp($params = null)
+    public static function enableOtp(?array $params = null): array|object
     {
         self::validateParams($params);
         $url = static::endPointUrl('enable_otp');

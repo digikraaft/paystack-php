@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Subscription extends ApiResource
 {
     const OBJECT_NAME = 'subscription';
@@ -11,13 +13,10 @@ class Subscription extends ApiResource
     use ApiOperations\Fetch;
 
     /**
-     * @param array $params details at
-     *
      * @link https://paystack.com/docs/api/#subscription-disable
-     *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function disable($params)
+    public static function disable(?array $params = null): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('disable');
@@ -26,13 +25,11 @@ class Subscription extends ApiResource
     }
 
     /**
-     * @param array $params details at
-     *
      * @link https://paystack.com/docs/api/#subscription-enable
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function enable($params)
+    public static function enable(array $params = null): array|object
     {
         self::validateParams($params, true);
         $url = static::endPointUrl('enable');

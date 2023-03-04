@@ -4,13 +4,8 @@ namespace Digikraaft\Paystack\ApiOperations;
 
 trait Update
 {
-    /**
-     * @param string $id     Resource id
-     * @param array  $params
-     *
-     * @return array|object
-     */
-    public static function update(string $id, $params)
+
+    public static function update(string $id, array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::resourceUrl($id);

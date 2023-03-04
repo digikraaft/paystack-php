@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class TransferRecipient extends ApiResource
 {
     const OBJECT_NAME = 'transferrecipient';
@@ -11,13 +13,12 @@ class TransferRecipient extends ApiResource
     use ApiOperations\Update;
 
     /**
-     * @param array $batch
      *
      * @link https://paystack.com/docs/api/#transfer-recipient-bulk
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function createBulk($batch)
+    public static function createBulk(array $batch): array|object
     {
         $url = static::endPointUrl('bulk');
 
@@ -25,13 +26,11 @@ class TransferRecipient extends ApiResource
     }
 
     /**
-     * @param $recipient_code
-     *
      * @link https://paystack.com/docs/api/#transfer-recipient-delete
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function delete($recipient_code)
+    public static function delete(string $recipient_code): array|object
     {
         $url = static::resourceUrl($recipient_code);
 

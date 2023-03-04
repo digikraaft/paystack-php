@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class Dispute extends ApiResource
 {
     const OBJECT_NAME = 'dispute';
@@ -11,13 +13,10 @@ class Dispute extends ApiResource
     use ApiOperations\Update;
 
     /**
-     * @param string $transaction_id
      *
      * @link https://paystack.com/docs/api/#dispute-transaction
-     *
-     * @return array|object
      */
-    public static function listTransactionDisputes(string $transaction_id)
+    public static function listTransactionDisputes(string $transaction_id): array|object
     {
         $url = "transaction/{$transaction_id}";
         $url = static::endPointUrl($url);
@@ -26,14 +25,11 @@ class Dispute extends ApiResource
     }
 
     /**
-     * @param string $dispute_id
-     * @param array  $params
      *
      * @link https://paystack.com/docs/api/#dispute-evidence
-     *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function addEvidence(string $dispute_id, $params)
+    public static function addEvidence(string $dispute_id, array $params): array|object
     {
         self::validateParams($params, true);
         $url = "{$dispute_id}/evidence";
@@ -43,13 +39,11 @@ class Dispute extends ApiResource
     }
 
     /**
-     * @param string $dispute_id
      *
      * @link https://paystack.com/docs/api/#dispute-upload-url
-     *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function getUploadUrl(string $dispute_id)
+    public static function getUploadUrl(string $dispute_id): array|object
     {
         $url = "{$dispute_id}/upload_url";
         $url = static::endPointUrl($url);
@@ -58,14 +52,12 @@ class Dispute extends ApiResource
     }
 
     /**
-     * @param string $dispute_id
-     * @param array  $params
      *
      * @link https://paystack.com/docs/api/#dispute-resolve
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function resolve(string $dispute_id, $params)
+    public static function resolve(string $dispute_id, array $params): array|object
     {
         self::validateParams($params, true);
         $url = "{$dispute_id}/resolve";
@@ -75,13 +67,12 @@ class Dispute extends ApiResource
     }
 
     /**
-     * @param array $params
      *
      * @link https://paystack.com/docs/api/#dispute-export
      *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function export($params)
+    public static function export(array $params): array|object
     {
         self::validateParams($params);
         $url = static::buildQueryString('export', $params);

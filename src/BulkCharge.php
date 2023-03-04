@@ -2,6 +2,8 @@
 
 namespace Digikraaft\Paystack;
 
+use Digikraaft\Paystack\Exceptions\InvalidArgumentException;
+
 class BulkCharge extends ApiResource
 {
     const OBJECT_NAME = 'bulkcharge';
@@ -10,17 +12,11 @@ class BulkCharge extends ApiResource
     use ApiOperations\Fetch;
 
     /**
-     * @param string $reference A reference for this batch.
-     * @param array  $params
      *
      * @throws Exceptions\InvalidArgumentException
-     * @throws Exceptions\IsNullException
-     *
-     * @return array | Object
-     *
      * @link https://paystack.com/docs/api/#bulk-charge-initiate
      */
-    public static function initiate($reference, $params)
+    public static function initiate(string $reference, array $params): array|object
     {
         self::validateParams($params, true);
         $url = static::buildQueryString($reference, $params);
@@ -29,14 +25,10 @@ class BulkCharge extends ApiResource
     }
 
     /**
-     * @param string $id_or_code
-     * @param null $params
-     * @return array|object
      * @throws Exceptions\InvalidArgumentException
-     * @throws Exceptions\IsNullException
      * @link https://paystack.com/docs/api/#bulk-charge-fetch-batch
      */
-    public static function fetchBulkChargeBatch($id_or_code, $params = null)
+    public static function fetchBulkChargeBatch(string $id_or_code, ?array $params = null): array|object
     {
         self::validateParams($params);
         $url = "{$id_or_code}";
@@ -46,14 +38,12 @@ class BulkCharge extends ApiResource
     }
 
     /**
-     * @param string $batch_id_or_code An ID or code for the batch whose charges you want to retrieve.
-     * @param array  $params
      *
      * @link https://paystack.com/docs/api/#bulk-charge-fetch-charge
      *
-     * @return array | Object
+     * @throws InvalidArgumentException
      */
-    public static function fetchChargesInABatch($batch_id_or_code, $params = null)
+    public static function fetchChargesInABatch(string $batch_id_or_code, array $params = null): array|object
     {
         self::validateParams($params);
         $url = "{$batch_id_or_code}/charges";
@@ -63,13 +53,11 @@ class BulkCharge extends ApiResource
     }
 
     /**
-     * @param string $batch_code
      *
      * @link https://paystack.com/docs/api/#bulk-charge-pause
-     *
-     * @return array | Object
+     * @throws InvalidArgumentException
      */
-    public static function pause($batch_code)
+    public static function pause(string $batch_code): array|object
     {
         $url = "pause/{$batch_code}";
         $url = static::endPointUrl($url);
@@ -78,13 +66,11 @@ class BulkCharge extends ApiResource
     }
 
     /**
-     * @param string $batch_code
      *
      * @link https://paystack.com/docs/api/#bulk-charge-resume
-     *
-     * @return array|object
+     * @throws InvalidArgumentException
      */
-    public static function resume($batch_code)
+    public static function resume(string $batch_code): array|object
     {
         $url = "resume/{$batch_code}";
         $url = static::endPointUrl($url);
